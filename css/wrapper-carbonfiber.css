@@ -1,0 +1,14 @@
+/*************
+  Carbon fiber image
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+#aswrapper.carbonfiber {
+	border: rgba(22,22,22,1) 2px solid;
+	background-image: -moz-repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-carbon-fiber.gif);
+	background-image: -webkit-repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-carbon-fiber.gif);
+	background-image: repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-carbon-fiber.gif);
+}
+

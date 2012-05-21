@@ -1,0 +1,216 @@
+﻿/*
+	AnythingSlider v1.7+ themes
+	Office Supplies theme
+*/
+
+/****************************
+ SET DEFAULT DIMENSIONS HERE
+ ****************************/
+/* Change the ID to match your slider */
+#slider {
+	width: 700px;
+	height: 390px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Opera width restriction */
+.anythingBase {
+	max-width: 32766px;
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	/* override the #slider overflow above, once the class is added */
+	overflow: visible !important;
+}
+
+/*************
+ ACTIVE STATE (slider has keyboard focus)
+ *************/
+/* slider window - top & bottom borders, active state */
+#aswrapper div.anythingSlider-office.activeSlider .anythingWindow {}
+
+/*****************
+ DEFAULT STATE (no keyboard focus)
+ *****************/
+/* Overall Wrapper */
+#aswrapper div.anythingSlider-office {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 16px; /* adjust left/right padding here to move arrows towards or away from the center */
+}
+
+/* Panels/Slides */
+#aswrapper .anythingBase .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+/* Vertical panels */
+#aswrapper .anythingBase .panel.vertical {
+	float: none;
+}
+
+/* Slider window - top & bottom borders, default state */
+#aswrapper div.anythingSlider-office .anythingWindow {
+	border: 0;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* Arrow buttons position */
+#aswrapper div.anythingSlider-office .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+#aswrapper div.anythingSlider-office span.back {
+	left: 0;
+}
+#aswrapper div.anythingSlider-office span.forward {
+	right: 0;
+}
+/* Arrow buttons images */
+#aswrapper div.anythingSlider-office .arrow a {
+	display: block;
+	background: transparent url(../images/office.png) no-repeat;
+	width: 90px;
+	height: 46px;
+	text-align: center;
+	text-decoration: none;
+	outline: 0;
+	margin: -22px 0 0; /* set to 1/2 height */
+}
+#aswrapper div.anythingSlider-office .back a {
+	background-position: left top;
+}
+#aswrapper div.anythingSlider-office .forward a {
+	background-position: 1px -45px;
+}
+#aswrapper div.anythingSlider-office .back a:hover,
+#aswrapper div.anythingSlider-office .back a.hover {
+	background-position: left -90px;
+}
+#aswrapper div.anythingSlider-office .forward a:hover,
+#aswrapper div.anythingSlider-office .forward a.hover {
+	background-position: 1px -135px;
+}
+
+/* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
+#aswrapper div.anythingSlider-office .back.disabled,
+#aswrapper div.anythingSlider-office .forward.disabled {
+	display: none;
+}
+
+/* Navigation tabs - Slider control block */
+#aswrapper div.anythingSlider-office .anythingControls {
+	outline: 0;
+	float: right;
+	position: absolute;
+	bottom: 5px;
+	right: 35px;
+	z-index: 100;
+}
+/* control list */
+#aswrapper div.anythingSlider-office .anythingControls ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+/* control tabs */
+#aswrapper div.anythingSlider-office .anythingControls ul li {
+	display: block;
+	float: left;
+}
+/* control links */
+#aswrapper div.anythingSlider-office .anythingControls ul a {
+	display: block;
+	background: transparent url(../images/office.png) no-repeat left -182px; /* default tab, active/inactive slider */
+	text-decoration: none;
+	width: 22px;
+	height: 23px;
+	margin: 0 1px;
+	padding: 0;
+	outline: 0;
+}
+/* control nav window (navigationSize = true) */
+#aswrapper div.anythingSlider-office .anythingControls .anythingNavWindow {
+	overflow: hidden;
+	float: left;
+}
+#aswrapper div.anythingSlider-office .anythingControls ul a.hover,
+#aswrapper div.anythingSlider-office .anythingControls ul a:hover {
+	background-position: left -204px;
+}
+#aswrapper div.anythingSlider-office .anythingControls ul a.cur {
+	background-position: -23px -182px;
+}
+#aswrapper div.anythingSlider-office .anythingControls ul a.cur:hover {
+	background-position: -23px -204px;
+}
+
+/* Start/stop button - stopped */
+#aswrapper div.anythingSlider-office .start-stop {
+	background: transparent url(../images/office.png) no-repeat -67px -182px;
+	color: #ddd;
+	width: 22px;
+	height: 23px;
+	padding: 0;
+	float: right;
+	z-index: 100;
+	outline: 0;
+	margin: 0 0 0 3px;
+}
+/* Start/stop button - stopped */
+#aswrapper div.anythingSlider-office .start-stop:hover,
+#aswrapper div.anythingSlider-office .start-stop.hover {
+	background-position: -67px -204px;
+}
+/* start/stop button - playing */
+#aswrapper div.anythingSlider-office .start-stop.playing {
+	background-position: -45px -182px;
+}
+#aswrapper div.anythingSlider-office .start-stop.playing:hover,
+#aswrapper div.anythingSlider-office .start-stop.playing.hover {
+	background-position: -45px -204px;
+}
+
+/* Navigation size window arrows */
+#aswrapper div.anythingSlider-office .anythingControls li.next a span,
+#aswrapper div.anythingSlider-office .anythingControls li.prev a span {
+	text-indent: 1px;
+	padding: 8px 0 0 7px;
+}
+#aswrapper div.anythingSlider-office .anythingControls li.prev a,
+#aswrapper div.anythingSlider-office .anythingControls li.next a {
+	color: #ddd;
+}
+#aswrapper div.anythingSlider-office .anythingControls li.next a:hover,
+#aswrapper div.anythingSlider-office .anythingControls li.prev a:hover {
+	color: #000;
+}
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
+#aswrapper div.anythingSlider-office .arrow a span,
+#aswrapper div.anythingSlider-office .anythingControls ul a span,
+#aswrapper div.anythingSlider-office .start-stop span {
+	display: block;
+	line-height: 1px; /* needed for IE7 */
+	width: 0;
+	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.2" client="site" method="upgrade">
+	<name>AnythingSlider</name>
+	<author>Ken Adam</author>
+	<creationDate>18-03-2012</creationDate>
+	<copyright>(c)2012 All rights reserved by Akadamia.</copyright>
+	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
+	<authorEmail>ken@akadamia.co.uk</authorEmail>
+	<authorUrl>www.akadamia.co.uk</authorUrl>
+	<version>1.3.2</version>
+	<description>MOD_ANYTHINGSLIDER_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_anythingslider">mod_anythingslider.php</filename>
+		<filename>mod_anythingslider.xml</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<folder>css</folder>
+		<filename>js/jquery.anythingslider.min.js</filename>
+		<filename>js/jquery.anythingslider.fx.min.js</filename>
+		<filename>js/jquery.anythingslider.video.min.js</filename>
+		<filename>js/jquery.easing.1.2.js</filename>
+		<folder>images</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_anythingslider.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_anythingslider.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="catid"
+					type="category"
+					extension="com_content"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_CATEGORY_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_CATEGORY_DESC">
+					<option value="0">JOPTION_SELECT_CATEGORY</option>
+				</field>
+				<field name="items"
+					type="text"
+					default=""
+					label="MOD_ANYTHINGSLIDER_F_ITEMS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ITEMS_DESC"></field>
+				<field name="show_page_title"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_SHOWTITLE_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_SHOWTITLE_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="ordering"
+					type="list"
+					default="create_dsc"
+					label="MOD_ANYTHINGSLIDER_F_ORDERING_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ORDERING_DESC">
+					<option value="c_dsc">Recently Added First</option>
+					<option value="m_dsc">Recently Modified First</option>
+					<option value="o_asc">Article Order</option>
+					<option value="o_dsc">Inverse Article Order</option>
+				</field>
+				<field name="width"
+					type="text"
+					default="700"
+					label="MOD_ANYTHINGSLIDER_F_WIDTH_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_WIDTH_DESC" />
+				<field name="height"
+					type="text"
+					default="500"
+					label="MOD_ANYTHINGSLIDER_F_HEIGHT_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_HEIGHT_DESC" />
+			</fieldset>
+			<fieldset name="appearance" label="Appearance">
+				<field name="theme"
+					type="list"
+					default="default"
+					label="MOD_ANYTHINGSLIDER_F_THEME_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_THEME_DESC">
+					<option value="default">default</option>
+					<option value="construction">construction</option>
+					<option value="cs-portfolio">cs-portfolio</option>
+					<option value="metallic">metallic</option>
+					<option value="minimalist-round">minimalist-round</option>
+					<option value="minimalist-square">minimalist-square</option>
+					<option value="default1">Default (no images/css3)</option>
+					<option value="default2">Default (with images/css3)</option>
+					<option value="mini-dark">Mini Dark</option>
+					<option value="mini-light">Mini Light</option>
+					<option value="office">Office</option>
+					<option value="polished">Polished</option>
+					<option value="ribbon">Ribbon</option>
+					<option value="shiny">Shiny</option>
+					<option value="tabs-light">Tabs Light</option>
+					<option value="tabs-dark">Tabs Dark</option>
+				</field>
+				<field name="wrapper"
+					type="list"
+					default="none"
+					label="MOD_ANYTHINGSLIDER_F_WRAPPER_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_WRAPPER_DESC">
+					<option value="none">None</option>
+					<option value="carbonfiber">Carbon Fibre</option>
+					<option value="glass">Glass</option>
+					<option value="glowy">Glowy</option>
+					<option value="leather">Leather</option>
+					<option value="noise">Noise</option>
+					<option value="paper">Paper</option>
+					<option value="dark-wood">Dark Wood</option>
+					<option value="light-wood">Light Wood</option>
+					<option value="pale-wood">Pale Wood</option>
+				</field>
+				<field name="expand"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_EXPAND_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_EXPAND_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="resizecontents"
+					type="radio"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_RESIZE_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_RESIZE_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="vertical"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_VERTICAL_LABEL" 
+					description="MOD_ANYTHINGSLIDER_F_VERTICAL_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="showmultiple"
+					type="text"
+					default=""
+					label="MOD_ANYTHINGSLIDER_F_MULTIPLE_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_MULTIPLE_DESC"/>
+				<field name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"></field>
+			</fieldset>
+			<fieldset name="toggle" label="Toggles">
+				<field name="togglearrows"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_TOGGLEARROWS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_TOGGLEARROWS_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="togglecontrols"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_TOGGLECONTROLS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_TOGGLECONTROLS_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+			</fieldset>
+			<fieldset name="legends" label="Legends">
+				<field name="starttext"
+					type="text"
+					default="Start"
+					label="MOD_ANYTHINGSLIDER_F_STARTTEXT_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_STARTTEXT_DESC"></field>
+				<field name="stoptext"
+					type="text"
+					default="Stop"
+					label="MOD_ANYTHINGSLIDER_F_STOPTEXT_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_STOPTEXT_DESC"></field>
+				<field name="forwardtext"
+					type="text"
+					label="MOD_ANYTHINGSLIDER_F_FORWARDTEXT_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_FORWARDTEXT_DESC"></field>
+				<field name="backtext"
+					type="text"
+					label="MOD_ANYTHINGSLIDER_F_BACKTEXT_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_BACKTEXT_DESC"></field>
+				<field name="tooltipclass"
+					type="text"
+					label="MOD_ANYTHINGSLIDER_F_TOOLTIP_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_TOOLTIP_DESC"></field>
+			</fieldset>
+			<fieldset name="function" label="Function">
+				<field name="enablearrows"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_ENABLE_ARROWS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ENABLE_ARROWS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enablenavigation"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_ENABLE_NAV_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ENABLE_NAV_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enablestartstop"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_ENABLE_SS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ENABLE_SS_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="enablekeyboard"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_ENABLE_KBD_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ENABLE_KBD_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="navigation" label="Navigation">
+				<field name="startpanel"
+					type="text"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_STARTPANEL_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_STARTPANEL_DESC"></field>
+				<field name="changeby"
+					type="text"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_CHANGEBY_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_CHANGEBY_DESC"></field>
+				<field name="hashtags"
+					type="radio"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_HASHTAGS_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_HASHTAGS_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="infiniteslides"
+					type="radio"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_INFINITE_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_INFINITE_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="navigation"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_NAVIGATION_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_NAVIGATION_DESC">
+					<option value="0">None</option>
+					<option value="1">Numbers</option>
+					<option value="2">Titles</option>
+				</field>
+			</fieldset>
+			<fieldset name="slideshow" label="Slideshow">
+				<field name="autoplay"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_AUTOPLAY_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_AUTOPLAY_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="autoplaylocked"
+					type="radio" default="0"
+					label="MOD_ANYTHINGSLIDER_F_AUTOPLAYLOCKED_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_AUTOPLAYLOCKED_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="autoplaydelayed"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_AUTOPLAYDELAYED_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_AUTOPLAYDELAYED_DESC">
+					<option value="0">JFALSE</option>
+					<option value="1">JTRUE</option>
+				</field>
+				<field name="pauseonhover"
+					type="list"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_PAUSEONHOVER_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_PAUSEONHOVER_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="stopatend"
+					type="list"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_STOPATEND_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_STOPATEND_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="playrtl"
+					type="list"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_PLAYRTL_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_PLAYRTL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+			<fieldset name="times" label="Timing">
+				<field name="delay"
+					type="text"
+					default="3000"
+					label="MOD_ANYTHINGSLIDER_F_DELAY_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_DELAY_DESC" ></field>
+				<field name="resumedelay"
+					type="text"
+					default="15000"
+					label="MOD_ANYTHINGSLIDER_F_RESUME_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_RESUME_DESC" ></field>
+				<field name="animationtime"
+					type="text"
+					default="600"
+					label="MOD_ANYTHINGSLIDER_F_ANIMATION_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_ANIMATION_DESC" ></field>
+				<field name="delaybeforeanimate"
+					type="text"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_DELAYB4_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_DELAYB4_DESC"></field>
+			</fieldset>
+			<fieldset name="Jquery" label="Javascript">
+				<field name="loadjquery"
+					type="radio"
+					default="1"
+					label="MOD_ANYTHINGSLIDER_F_LOADJQUERY_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_LOADJQUERY_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="loadfx"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_LOADFX_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_LOADFX_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="loadvideo"
+					type="radio"
+					default="0"
+					label="MOD_ANYTHINGSLIDER_F_LOADVIDEO_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_LOADVIDEO_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

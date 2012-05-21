@@ -1,0 +1,46 @@
+/*************
+ Paper
+ curled corners from http://matthamm.com/box-shadow-curl.html
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+#aswrapper.paper {
+	position: relative;
+	background: #fff url(../images/bkgd-paper.jpg);
+	border: 1px solid #cacfc5;
+	/*height: 390px; */
+	padding: 40px;
+	margin: 0 auto;
+	-moz-border-radius:0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}
+.paper:before, .paper:after {
+	content: '';
+	z-index: -1;
+	position: absolute;
+	left: 23px;
+	bottom: 13px;
+	width: 70%;
+	max-width: 300px; /* avoid rotation causing ugly appearance at large container widths */
+	height: 55%;
+	-webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+	-webkit-transform: skew(-15deg) rotate(-6deg);
+	-moz-transform: skew(-15deg) rotate(-6deg);
+	transform: skew(-15deg) rotate(-6deg);
+}
+.paper:after {
+	left: auto;
+	right: 23px;
+	-webkit-transform: skew(15deg) rotate(6deg);
+	-moz-transform: skew(15deg) rotate(6deg);
+	transform: skew(15deg) rotate(6deg);
+}
+

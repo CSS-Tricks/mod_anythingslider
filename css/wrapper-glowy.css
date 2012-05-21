@@ -1,0 +1,15 @@
+/*************
+ Glowy backlight
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+
+#aswrapper.glowy {
+	width: 80%;
+	background: -moz-radial-gradient(50% 50%, farthest-side, #695750, #000);
+	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#695750), to(#000));
+	background: gradient(radial, 50% 50%, 0, 50% 50%, 100, from(#695750), to(#000));
+}
+

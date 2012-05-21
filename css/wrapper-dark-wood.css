@@ -1,0 +1,13 @@
+/*************
+ Dark wood image
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+#aswrapper.dark-wood {
+	background-image: url(../images/bkgd-wood1.jpg);
+	-webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+}

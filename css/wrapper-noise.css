@@ -1,0 +1,11 @@
+/*************
+ Noise overlay
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+#aswrapper.noise {
+	background-image: url(../images/bkgd-noise.png);
+	border: rgba(128,128,128,0.1) 1px solid;
+}

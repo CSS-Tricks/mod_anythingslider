@@ -1,0 +1,14 @@
+/*************
+ Pale Wood image
+ *************/
+#aswrapper {
+	padding: 40px;
+	margin: 0 auto;
+}
+#aswrapper.pale-wood {
+	background-image: url(../images/bkgd-wood3.jpg);
+	-webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+}
+

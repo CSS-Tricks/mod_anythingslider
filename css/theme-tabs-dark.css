@@ -1,0 +1,237 @@
+﻿/*
+	AnythingSlider v1.7+ themes
+	Tabs Dark theme
+*/
+
+/****************************
+ SET DEFAULT DIMENSIONS HERE
+ ****************************/
+/* Change the ID to match your slider */
+#slider {
+	width: 700px;
+	height: 390px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/* Opera width restriction */
+.anythingBase {
+	max-width: 32766px;
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	/* override the #slider overflow above, once the class is added */
+	overflow: visible !important;
+}
+
+/*************
+ ACTIVE STATE (slider has keyboard focus)
+ *************/
+/* slider window - top & bottom borders, active state */
+#aswrapper div.anythingSlider-tabs-dark.activeSlider .anythingWindow {
+	border-color: #621f02;
+}
+#aswrapper div.anythingSlider-tabs-dark.activeSlider .arrow a {
+	
+}
+#aswrapper div.anythingSlider-tabs-dark.activeSlider .anythingControls {
+	
+}
+
+/*****************
+ DEFAULT STATE (no keyboard focus)
+ *****************/
+/* Overall Wrapper */
+#aswrapper div.anythingSlider-tabs-dark {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 3px; /* adjust left/right padding here to move arrows towards or away from the center */
+}
+
+/* Panels/Slides */
+.anythingBase .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+/* Vertical panels */
+.anythingBase .panel.vertical {
+	float: none;
+}
+
+/* Slider window - top & bottom borders, default state */
+#aswrapper div.anythingSlider-tabs-dark .anythingWindow {
+	border-top: 3px solid #2b1303;
+	border-bottom: 3px solid #2b1303;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* Arrow buttons position */
+#aswrapper div.anythingSlider-tabs-dark .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+#aswrapper div.anythingSlider-tabs-dark span.back {
+	left: 0;
+}
+#aswrapper div.anythingSlider-tabs-dark span.forward {
+	right: 0;
+}
+/* Arrow buttons images */
+#aswrapper div.anythingSlider-tabs-dark .arrow a {
+	display: block;
+	background: transparent url(../images/tabs-dark.png) no-repeat left top;
+	height: 69px;
+	width: 38px;
+	text-align: center;
+	text-decoration: none;
+	outline: 0;
+	margin: -34px 0 0; /* set to 1/2 height */
+}
+#aswrapper div.anythingSlider-tabs-dark .forward a {
+	background-position: right top;
+}
+#aswrapper div.anythingSlider-tabs-dark .back a:hover,
+#aswrapper div.anythingSlider-tabs-dark .back a.hover {
+	background-position: left bottom;
+}
+#aswrapper div.anythingSlider-tabs-dark .forward a:hover,
+#aswrapper div.anythingSlider-tabs-dark .forward a.hover {
+	background-position: right bottom;
+}
+
+/* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
+#aswrapper div.anythingSlider-tabs-dark .back.disabled,
+#aswrapper div.anythingSlider-tabs-dark .forward.disabled {
+	display: none;
+}
+
+/* Navigation tabs - Slider control block */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls {
+	outline: 0;
+	float: left;
+	position: absolute;
+	bottom: -8px;
+	left: 5px;
+	z-index: 100;
+	width: 95%;
+}
+
+/* control list */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul {
+	float: left;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+}
+/* control tabs */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul li {
+	display: block;
+	float: left;
+	margin: 0 0 0 4px;
+}
+/* control links */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a,
+#aswrapper div.anythingSlider-tabs-dark a.start-stop {
+	display: block;
+	background: transparent url(../images/tabs-dark2.png) no-repeat left bottom; /* default tab, active/inactive slider */
+	color: #777;
+	font-size: 14px;
+	text-decoration: none;
+	height: 26px;
+	margin: 0;
+	padding: 0;
+	outline: 0;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a:hover,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.hover {
+	color: #3b86b1;
+	background-position: left top;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a span,
+#aswrapper div.anythingSlider-tabs-dark a.start-stop span {
+	display: block;
+	background: transparent url(../images/tabs-dark2.png) no-repeat right bottom;
+	height: 26px;
+	padding: 0 18px 0 0;
+	position: relative;
+	margin: 0 0 0 5px;
+	left: 13px;
+	top: 0;
+}
+/* control nav window (navigationSize = true) */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls .anythingNavWindow {
+	margin: 0 10px;
+	overflow: hidden;
+	float: left;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.hover span,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a:hover span {
+	background-position: right top;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.cur,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.cur:hover {
+	color: #3b86b1;
+	background-position: left top;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.cur span,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls ul a.cur:hover span {
+	background-position: right top;
+}
+
+/* Start/stop button - stopped */
+#aswrapper div.anythingSlider-tabs-dark .start-stop {
+	float: right;
+}
+
+/* Start/stop button - stopped */
+#aswrapper div.anythingSlider-tabs-dark .start-stop:hover,
+#aswrapper div.anythingSlider-tabs-dark .start-stop.hover {
+	background-position: left top;
+}
+#aswrapper div.anythingSlider-tabs-dark .start-stop:hover span,
+#aswrapper div.anythingSlider-tabs-dark .start-stop.hover span {
+	background-position: right top;
+}
+/* start/stop button - playing */
+#aswrapper div.anythingSlider-tabs-dark .start-stop.playing {}
+#aswrapper div.anythingSlider-tabs-dark .start-stop.playing:hover,
+#aswrapper div.anythingSlider-tabs-dark .start-stop.playing.hover {}
+
+/* Navigation size window arrows */
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.next a span,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.prev a span {
+	
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.prev a,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.next a {
+	color: #777;
+}
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.next a:hover,
+#aswrapper div.anythingSlider-tabs-dark .anythingControls li.prev a:hover {
+	color: #3b86b1;
+}
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
+#aswrapper div.anythingSlider-tabs-dark .arrow a span {
+	display: block;
+	line-height: 1px; /* needed for IE7 */
+	width: 0;
+	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
