@@ -1,7 +1,7 @@
 ﻿## Joomla 2.5 Mod for AnythingSlider by Ken Adam
 
 * The original [Joomla 1.5 mod for AnythingSlider](http://extensions.joomla.org/extensions/news-display/articles-display/articles-showcase/11799) (version 1.2.1) was written by [Dnote software](http://www.dnote.nl/index.php?option=com_content&view=article&id=40&Itemid=33) with a GPLv2 license.
-* This repository was started by updates made by [Ken Adams](https://github.com/Akadamia) for Joomla 2.5 and AnythingSlider v1.7.26.
+* This repository was started by updates made by [Ken Adam](https://github.com/Akadamia) for Joomla 2.5 and AnythingSlider v1.7.26.
 * These files were sent me to post on github. I (Mottie) have very little knowledge of php and Joomla, but I will do my best to keep this repository updated.
 * This code package is also available for download from [joomlacode.org](http://joomlacode.org/gf/project/anythingslider/)
 * AnythingSlider documentation can be found [here](https://github.com/ProLoser/AnythingSlider/wiki).
