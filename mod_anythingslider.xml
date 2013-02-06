@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5.2" client="site" method="upgrade">
+<extension type="module" version="2.5.8" client="site" method="upgrade">
 	<name>AnythingSlider</name>
 	<author>Ken Adam</author>
-	<creationDate>18-03-2012</creationDate>
+	<creationDate>03-02-2013</creationDate>
 	<copyright>(c)2012 All rights reserved by Akadamia.</copyright>
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>ken@akadamia.co.uk</authorEmail>
 	<authorUrl>www.akadamia.co.uk</authorUrl>
-	<version>1.3.2</version>
+	<version>1.4.0</version>
 	<description>MOD_ANYTHINGSLIDER_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_anythingslider">mod_anythingslider.php</filename>
@@ -21,6 +21,7 @@
 		<filename>js/jquery.anythingslider.fx.min.js</filename>
 		<filename>js/jquery.anythingslider.video.min.js</filename>
 		<filename>js/jquery.easing.1.2.js</filename>
+		<filename>js/jquery.min.js</filename>
 		<folder>images</folder>
 	</files>
 	<languages>
@@ -92,8 +93,18 @@
 					<option value="polished">Polished</option>
 					<option value="ribbon">Ribbon</option>
 					<option value="shiny">Shiny</option>
+					<option value="simple">Simple</option>
 					<option value="tabs-light">Tabs Light</option>
 					<option value="tabs-dark">Tabs Dark</option>
+				</field>
+				<field name="mode"
+					type="list"
+					default="h"
+					label="MOD_ANYTHINGSLIDER_F_MODE_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_MODE_DESC">
+					<option value="h">Horizontal</option>
+					<option value="v">Vertical</option>
+					<option value="f">Fade</option>
 				</field>
 				<field name="wrapper"
 					type="list"
@@ -127,19 +138,16 @@
 					<option value="0">JFALSE</option>
 					<option value="1">JTRUE</option>
 				</field>
-				<field name="vertical"
-					type="radio"
-					default="0"
-					label="MOD_ANYTHINGSLIDER_F_VERTICAL_LABEL" 
-					description="MOD_ANYTHINGSLIDER_F_VERTICAL_DESC">
-					<option value="0">JFALSE</option>
-					<option value="1">JTRUE</option>
-				</field>
 				<field name="showmultiple"
 					type="text"
 					default=""
 					label="MOD_ANYTHINGSLIDER_F_MULTIPLE_LABEL"
 					description="MOD_ANYTHINGSLIDER_F_MULTIPLE_DESC"/>
+				<field name="easing"
+					type="text"
+					default="swing"
+					label="MOD_ANYTHINGSLIDER_F_EASING_LABEL"
+					description="MOD_ANYTHINGSLIDER_F_EASING_DESC"/>
 				<field name="moduleclass_sfx"
 					type="text"
 					default=""

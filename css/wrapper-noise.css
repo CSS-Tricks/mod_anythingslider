@@ -1,11 +1,17 @@
-/*************
- Noise overlay
- *************/
+﻿/* wrapper backgrounds by Rob Garrison (aka Mottie) */
 #aswrapper {
 	padding: 40px;
 	margin: 0 auto;
 }
+
+/*************
+ Noise overlay
+ *************/
 #aswrapper.noise {
 	background-image: url(../images/bkgd-noise.png);
 	border: rgba(128,128,128,0.1) 1px solid;
+}
+
+.as-oldie #aswrapper.noise {
+	border: rgb(128,128,128) 1px solid;
 }

@@ -1,16 +1,18 @@
-/*************
- Paper
- curled corners from http://matthamm.com/box-shadow-curl.html
- *************/
+﻿/* wrapper backgrounds by Rob Garrison (aka Mottie) */
 #aswrapper {
 	padding: 40px;
 	margin: 0 auto;
 }
+
+/*************
+ Paper
+ curled corners from http://matthamm.com/box-shadow-curl.html
+ *************/
 #aswrapper.paper {
 	position: relative;
 	background: #fff url(../images/bkgd-paper.jpg);
 	border: 1px solid #cacfc5;
-	/*height: 390px; */
+	height: 390px;
 	padding: 40px;
 	margin: 0 auto;
 	-moz-border-radius:0;
@@ -43,4 +45,3 @@
 	-moz-transform: skew(15deg) rotate(6deg);
 	transform: skew(15deg) rotate(6deg);
 }
-

@@ -1,6 +1,7 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
 	Tabs Light theme
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -16,9 +17,7 @@
 	overflow-x: hidden;
 }
 
-/* Opera width restriction */
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -55,18 +54,31 @@
 	padding: 0 3px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+#aswrapper div.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+#aswrapper div.anythingSlider .vertical .panel {
 	float: none;
+}
+
+/* fade mode */
+#aswrapper div.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+/* fade mode active page - visible & on top */
+#aswrapper div.anythingSlider .fade .activePage {
+	z-index: 1;
 }
 
 /* Slider window - top & bottom borders, default state */
@@ -212,16 +224,13 @@
 #aswrapper div.anythingSlider-tabs-light .start-stop.playing.hover {}
 
 /* Navigation size window arrows */
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.next a span,
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.prev a span {
+#aswrapper div.anythingSlider-tabs-light .anythingControls li.next a span, .anythingSlider-tabs-light .anythingControls li.prev a span {
 	
 }
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.prev a,
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.next a {
+#aswrapper div.anythingSlider-tabs-light .anythingControls li.prev a, .anythingSlider-tabs-light .anythingControls li.next a {
 	color: #111;
 }
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.next a:hover,
-#aswrapper div.anythingSlider-tabs-light .anythingControls li.prev a:hover {
+#aswrapper div.anythingSlider-tabs-light .anythingControls li.next a:hover, .anythingSlider-tabs-light .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -235,3 +244,25 @@
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
 }
+/* AnythingSlider IE7 and older styling */
+#aswrapper div.as-oldie div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+#aswrapper div.as-oldie div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+}
+#aswrapper div.as-oldie div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+#aswrapper div.as-oldie div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+#aswrapper div.as-oldie div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+

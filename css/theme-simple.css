@@ -1,7 +1,8 @@
 ﻿/*
 	AnythingSlider v1.7+ themes
-	Mini Light theme
-	by Rob Garrison (aka Mottie)
+	Simple theme
+	by Joseph Larmarange
+	adapted from Mini Light theme by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -33,11 +34,11 @@
 /*************
  ACTIVE STATE (slider has keyboard focus)
  *************/
-#aswrapper div.anythingSlider-mini-light.activeSlider .arrow a {
+#aswrapper div.anythingSlider-simple.activeSlider .arrow a {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
-#aswrapper div.anythingSlider-mini-light.activeSlider .anythingControls {
+#aswrapper div.anythingSlider-simple.activeSlider .anythingControls {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
@@ -46,11 +47,20 @@
  DEFAULT STATE (no keyboard focus)
  *****************/
 /* Overall Wrapper */
-#aswrapper div.anythingSlider-mini-light {
+#aswrapper div.anythingSlider-simple {
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	padding: 0; /* adjust left/right padding here to move arrows towards or away from the center */
+	padding-top: 15px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px; 
+	box-shadow: 0 0 6px #888;
+	-moz-box-shadow: 0 0 6px #888;  
+	-webkit-box-shadow: 0 0 6px #888;
+	border: solid 1px #ccc;
 }
 
 /* all panels inside the slider; horizontal mode */
@@ -81,7 +91,7 @@
 }
 
 /* Slider window - top & bottom borders, default state */
-#aswrapper div.anythingSlider-mini-light .anythingWindow {
+#aswrapper div.anythingSlider-simple .anythingWindow {
 	border: 0;
 	overflow: hidden;
 	position: relative;
@@ -89,86 +99,84 @@
 	height: 100%;
 }
 /* Arrow buttons position */
-#aswrapper div.anythingSlider-mini-light .arrow {
+#aswrapper div.anythingSlider-simple .arrow {
 	top: 50%;
 	position: absolute;
 	display: block;
 }
-#aswrapper div.anythingSlider-mini-light span.back {
-	left: 0;
+#aswrapper div.anythingSlider-simple span.back {
+	left: 3px;
 }
-#aswrapper div.anythingSlider-mini-light span.forward {
-	right: 0;
+#aswrapper div.anythingSlider-simple span.forward {
+	right: 3px;
 }
 /* Arrow buttons images */
-#aswrapper div.anythingSlider-mini-light .arrow a {
+#aswrapper div.anythingSlider-simple .arrow a {
 	display: block;
-	background: transparent url(../images/mini-light.png) no-repeat;
-	height: 42px;
+	background: transparent url(../images/simple.png) no-repeat;
+	height: 22px;
 	width: 22px;
 	text-align: center;
 	text-decoration: none;
 	outline: 0;
-	margin: -21px 0 0; /* set to 1/2 height */
+	margin: -11px 0 0; /* set to 1/2 height */
 	opacity: 0.50;
 	filter: alpha(opacity=50);
 }
-#aswrapper div.anythingSlider-mini-light .arrow a:hover {
+#aswrapper div.anythingSlider-simple .arrow a:hover {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
-#aswrapper div.anythingSlider-mini-light .back a {
+#aswrapper div.anythingSlider-simple .back a {
 	background-position: left top;
 }
-#aswrapper div.anythingSlider-mini-light .forward a {
+#aswrapper div.anythingSlider-simple .forward a {
 	background-position: right top;
 }
-#aswrapper div.anythingSlider-mini-light .back a:hover,
-#aswrapper div.anythingSlider-mini-light .back a.hover {
-	background-position: left -43px;
+#aswrapper div.anythingSlider-simple .back a:hover,
+#aswrapper div.anythingSlider-simple .back a.hover {
+	background-position: left -22px;
 }
-#aswrapper div.anythingSlider-mini-light .forward a:hover,
-#aswrapper div.anythingSlider-mini-light .forward a.hover {
-	background-position: right -43px;
+#aswrapper div.anythingSlider-simple .forward a:hover,
+#aswrapper div.anythingSlider-simple .forward a.hover {
+	background-position: right -22px;
 }
 
 /* Disabled arrows - infiniteSlide = false & stopAtEnd = true */
-#aswrapper div.anythingSlider-mini-light .back.disabled,
-#aswrapper div.anythingSlider-mini-light .forward.disabled {
+#aswrapper div.anythingSlider-simple .back.disabled,
+#aswrapper div.anythingSlider-simple .forward.disabled {
 	display: none;
 }
 
 /* Navigation tabs - Slider control block */
-#aswrapper div.anythingSlider-mini-light .anythingControls {
+#aswrapper div.anythingSlider-simple .anythingControls {
 	outline: 0;
-	float: right;
-	position: absolute;
-	bottom: 6px;
-	right: 25px;
+	position: relative;
+	margin: 10px 0;
 	z-index: 100;
 	opacity: 0.50;
 	filter: alpha(opacity=50);
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls:hover {
+#aswrapper div.anythingSlider-simple .anythingControls:hover {
 	opacity: 0.80;
 	filter: alpha(opacity=80);
 }
 /* control list */
-#aswrapper div.anythingSlider-mini-light .anythingControls ul {
+#aswrapper div.anythingSlider-simple .anythingControls ul {
 	float: left;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
 }
 /* control tabs */
-#aswrapper div.anythingSlider-mini-light .anythingControls ul li {
+#aswrapper div.anythingSlider-simple .anythingControls ul li {
 	display: block;
 	float: left;
 }
 /* control links */
-#aswrapper div.anythingSlider-mini-light .anythingControls ul a {
+#aswrapper div.anythingSlider-simple .anythingControls ul a {
 	display: block;
-	background: transparent url(../images/mini-light.png) no-repeat left -85px; /* default tab, active/inactive slider */
+	background: transparent url(../images/simple.png) no-repeat left -44px; /* default tab, active/inactive slider */
 	text-decoration: none;
 	width: 11px;
 	height: 11px;
@@ -177,24 +185,24 @@
 	outline: 0;
 }
 /* control nav window (navigationSize = true) */
-#aswrapper div.anythingSlider-mini-light .anythingControls .anythingNavWindow {
+#aswrapper div.anythingSlider-simple .anythingControls .anythingNavWindow {
 	overflow: hidden;
 	float: left;
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls ul a.hover,
-#aswrapper div.anythingSlider-mini-light .anythingControls ul a:hover {
+#aswrapper div.anythingSlider-simple .anythingControls ul a.hover,
+#aswrapper div.anythingSlider-simple .anythingControls ul a:hover {
 	background-position: left bottom;
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls ul a.cur {
-	background-position: -11px -85px;
+#aswrapper div.anythingSlider-simple .anythingControls ul a.cur {
+	background-position: -11px -44px;
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls ul a.cur:hover {
+#aswrapper div.anythingSlider-simple .anythingControls ul a.cur:hover {
 	background-position: -11px bottom;
 }
 
 /* Start/stop button - stopped */
-#aswrapper div.anythingSlider-mini-light .start-stop {
-	background: transparent url(../images/mini-light.png) no-repeat -22px -85px;
+#aswrapper div.anythingSlider-simple .start-stop {
+	background: transparent url(../images/simple.png) no-repeat -22px -44px;
 	color: #ddd;
 	width: 11px;
 	height: 11px;
@@ -204,29 +212,29 @@
 	outline: 0;
 }
 /* Start/stop button - stopped */
-#aswrapper div.anythingSlider-mini-light .start-stop:hover,
-#aswrapper div.anythingSlider-mini-light .start-stop.hover {
+#aswrapper div.anythingSlider-simple .start-stop:hover,
+#aswrapper div.anythingSlider-simple .start-stop.hover {
 	background-position: -22px bottom;
 }
 /* start/stop button - playing */
-#aswrapper div.anythingSlider-mini-light .start-stop.playing {
-	background-position: right -85px;
+#aswrapper div.anythingSlider-simple .start-stop.playing {
+	background-position: right -44px;
 }
-#aswrapper div.anythingSlider-mini-light .start-stop.playing:hover,
-#aswrapper div.anythingSlider-mini-light .start-stop.playing.hover {
+#aswrapper div.anythingSlider-simple .start-stop.playing:hover,
+#aswrapper div.anythingSlider-simple .start-stop.playing.hover {
 	background-position: right bottom;
 }
 
 /* Navigation size window arrows */
-#aswrapper div.anythingSlider-mini-light .anythingControls li.next a span, #aswrapper div.anythingSlider-mini-light .anythingControls li.prev a span {
+#aswrapper div.anythingSlider-simple .anythingControls li.next a span, #aswrapper div.anythingSlider-simple .anythingControls li.prev a span {
 	text-indent: 1px;
 	padding: 4px 0 0 3px;
 	font-size: 8px;
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls li.prev a, #aswrapper div.anythingSlider-mini-light .anythingControls li.next a {
+#aswrapper div.anythingSlider-simple .anythingControls li.prev a, #aswrapper div.anythingSlider-simple .anythingControls li.next a {
 	color: #ddd;
 }
-#aswrapper div.anythingSlider-mini-light .anythingControls li.next a:hover, #aswrapper div.anythingSlider-mini-light .anythingControls li.prev a:hover {
+#aswrapper div.anythingSlider-simple .anythingControls li.next a:hover, #aswrapper div.anythingSlider-simple .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -234,7 +242,7 @@
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-#aswrapper div.anythingSlider-mini-light .arrow a span, #aswrapper div.anythingSlider-mini-light .anythingControls ul a span, #aswrapper div.anythingSlider-mini-light .start-stop span {
+#aswrapper div.anythingSlider-simple .arrow a span, #aswrapper div.anythingSlider-simple .anythingControls ul a span, #aswrapper div.anythingSlider-simple .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;

@@ -1,5 +1,5 @@
 /*
-	AnythingSlider v1.7+ Default (base) theme
+	AnythingSlider v1.8+ Default theme
 	By Chris Coyier: http://css-tricks.com
 	with major improvements by Doug Neiner: http://pixelgraphics.us/
 	based on work by Remy Sharp: http://jqueryfordesigners.com/
@@ -8,7 +8,7 @@
 /*****************************
   SET DEFAULT DIMENSIONS HERE
  *****************************/
-/* change the ID to match your slider */
+/* change the ID & dimensions to match your slider */
 #slider {
 	width: 700px;
 	height: 390px;
@@ -18,67 +18,198 @@
 	overflow-x: hidden;
 }
 
-/*****************
-  SET COLORS HERE
- *****************/
-/**** Default state (no keyboard focus) ****/
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+/* Overall Wrapper */
+#aswrapper div.anythingSlider-default {
+	margin: 0 auto;
+	/* 45px right & left padding for the arrows, 28px @ bottom for navigation */
+	padding: 0 45px 28px 45px;
+}
 /* slider window - top & bottom borders, default state */
-#aswrapper div.anythingSlider .anythingWindow {
+#aswrapper div.anythingSlider-default .anythingWindow {
 	border-top: 3px solid #777;
 	border-bottom: 3px solid #777;
 }
-/* Navigation buttons, default state */
-#aswrapper div.anythingSlider .anythingControls ul a.cur, #aswrapper div.anythingSlider .anythingControls ul a {
-	background: #777;
+/* Navigation buttons + start/stop button, default state */
+#aswrapper div.anythingSlider-default .anythingControls a {
+	/* top shadow */
+	background: #777 url(../images/default.png) center -288px repeat-x;
+	color: #000;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+}
+/* Make sure navigation text is visible */
+#aswrapper div.anythingSlider-default .anythingControls a span {
+	visibility: visible;
+}
+/* Navigation current button, default state */
+#aswrapper div.anythingSlider-default .anythingControls a.cur {
+	background: #888;
 	color: #000;
 }
+
 /* start-stop button, stopped, default state */
-#aswrapper div.anythingSlider .start-stop {
+#aswrapper div.anythingSlider-default .anythingControls a.start-stop {
 	background-color: #040;
-	color: #fff;
+	color: #ddd;
 }
 /* start-stop button, playing, default state */
-#aswrapper div.anythingSlider .start-stop.playing {
+#aswrapper div.anythingSlider-default .anythingControls a.start-stop.playing {
 	background-color: #800;
 }
+
 /* start-stop button, default hovered text color (when visible) */
-#aswrapper div.anythingSlider .start-stop:hover, #aswrapper div.anythingSlider .start-stop.hover {
+/* hide nav/start-stop background image shadow on hover - makes the button appear to come forward */
+#aswrapper div.anythingSlider-default .anythingControls a.start-stop:hover,
+#aswrapper div.anythingSlider-default .anythingControls a.start-stop.hover,
+#aswrapper div.anythingSlider-default .anythingControls a.start-stop .anythingControls ul a:hover {
+	background-image: none;
 	color: #ddd;
 }
 
-/**** Active State (slider has keyboard focus) ****/
+/*
+ =================================
+ Active State (has keyboard focus)
+ =================================
+*/
 /* slider window - top & bottom borders, active state */
-#aswrapper div.anythingSlider.activeSlider .anythingWindow {
+#aswrapper div.anythingSlider-default.activeSlider .anythingWindow {
 	border-color: #7C9127;
 }
 /* Navigation buttons, active state */
-#aswrapper div.anythingSlider.activeSlider .anythingControls ul a.cur, #aswrapper div.anythingSlider.activeSlider .anythingControls ul a {
+#aswrapper div.anythingSlider-default.activeSlider .anythingControls a {
+	/* background image = top shadow */
 	background-color: #7C9127;
 }
+/* Navigation current & hovered button, active state */
+#aswrapper div.anythingSlider-default.activeSlider .anythingControls a.cur,
+#aswrapper div.anythingSlider-default.activeSlider .anythingControls a:hover {
+	/* background image removed */
+	background: #7C9127;
+}
+
 /* start-stop button, stopped, active state */
-#aswrapper div.anythingSlider .start-stop {
+#aswrapper div.anythingSlider-default.activeSlider .anythingControls a.start-stop {
 	background-color: #080;
 	color: #fff;
 }
 /* start-stop button, playing, active state */
-#aswrapper div.anythingSlider .start-stop.playing {
+#aswrapper div.anythingSlider-default.activeSlider .anythingControls a.start-stop.playing {
 	background-color: #d00;
+	color: #fff;
 }
 /* start-stop button, active slider hovered text color (when visible) */
-#aswrapper div.anythingSlider .start-stop:hover, #aswrapper div.anythingSlider .start-stop.hover {
+#aswrapper div.anythingSlider-default.activeSlider .start-stop:hover,
+#aswrapper div.anythingSlider-default.activeSlider .start-stop.hover {
 	color: #fff;
+}
+
+/************************
+  NAVIGATION POSITIONING
+ ************************/
+/* Navigation Arrows */
+#aswrapper div.anythingSlider-default .arrow {
+	top: 50%;
+	position: absolute;
+	display: block;
+}
+
+#aswrapper div.anythingSlider-default .arrow a {
+	display: block;
+	width: 45px;
+	height: 140px;
+	margin: -70px 0 0 0; /* half height of image */
+	text-align: center;
+	outline: 0;
+	background: url(../images/default.png) no-repeat;
+}
+
+/* back arrow */
+#aswrapper div.anythingSlider-default .back { left: 0; }
+#aswrapper div.anythingSlider-default .back a { background-position: left top; }
+#aswrapper div.anythingSlider-default .back a:hover,
+#aswrapper div.anythingSlider-default .back a.hover { background-position: left -140px; }
+/* forward arrow */
+#aswrapper div.anythingSlider-default .forward { right: 0; }
+#aswrapper div.anythingSlider-default .forward a { background-position: right top; }
+#aswrapper div.anythingSlider-default .forward a:hover,
+#aswrapper div.anythingSlider-default .forward a.hover { background-position: right -140px; }
+
+/* Navigation Links */
+#aswrapper div.anythingSlider-default .anythingControls { outline: 0; display: none; }
+#aswrapper div.anythingSlider-default .anythingControls ul { margin: 0; padding: 0; float: left; }
+#aswrapper div.anythingSlider-default .anythingControls ul li { display: inline; }
+#aswrapper div.anythingSlider-default .anythingControls ul a {
+	font: 11px/18px Georgia, Serif;
+	display: inline-block;
+	text-decoration: none;
+	padding: 2px 8px;
+	height: 18px;
+	margin: 0 5px 0 0;
+	text-align: center;
+	outline: 0;
+}
+
+/* navigationSize window */
+#aswrapper div.anythingSlider-default .anythingControls .anythingNavWindow {
+	overflow: hidden;
+	float: left;
+}
+
+/* Autoplay Start/Stop button */
+#aswrapper div.anythingSlider-default .anythingControls .start-stop {
+	padding: 2px 5px;
+	width: 40px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	z-index: 100;
+	outline: 0;
+}
+
+/***********************
+  IE8 AND OLDER STYLING
+ ***********************/
+
+/* Navigation Arrows */
+#aswrapper div.as-oldie .anythingSlider-default .arrow {
+	top: 30%;
+}
+#aswrapper div.as-oldie .anythingSlider-default .arrow a {
+	margin: 0;
+}
+
+/* margin between nav buttons just looks better */
+#aswrapper div.as-oldie .anythingSlider-default .anythingControls li {
+	margin-left: 3px;
+}
+
+/* When using the navigationSize option, the side margins need to be zero
+	None of the navigation panels look good in IE7 now =( */
+#aswrapper div.as-oldie .anythingSlider-default .anythingControls a {
+	margin: 0;
+}
+#aswrapper div.as-oldie .anythingSlider-default .anythingNavWindow {
+	margin: 0 2px;
+}
+#aswrapper div.as-oldie .anythingSlider-default .anythingNavWindow li {
+	padding: 3px 0 0 0;
 }
 
 /***********************
   COMMON SLIDER STYLING
  ***********************/
-/* Overall Wrapper: 45px right & left padding for the arrows, 28px @ bottom for navigation */
+/* Overall Wrapper */
 #aswrapper div.anythingSlider {
 	display: block;
-	margin: 0 auto;
-	overflow: visible !important; /* needed for Opera and Safari */
+	overflow: visible !important;
 	position: relative;
-	padding: 0 45px 28px 45px;
 }
 /* anythingSlider viewport window */
 #aswrapper div.anythingSlider .anythingWindow {
@@ -88,7 +219,7 @@
 	height: 100%;
 }
 /* anythingSlider base (original element) */
-.anythingBase {
+#aswrapper div.anythingSlider .anythingBase {
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -98,8 +229,19 @@
 	margin: 0;
 	padding: 0;
 }
-/* all panels inside the slider */
-.anythingBase .panel {
+
+/* Navigation arrow text; indent moved to span inside "a", for IE7;
+  apparently, a negative text-indent on an "a" link moves the link as well as the text */
+#aswrapper div.anythingSlider .arrow span {
+	display: block;
+	visibility: hidden;
+}
+/* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+#aswrapper div.anythingSlider .arrow.disabled {
+	display: none;
+}
+/* all panels inside the slider; horizontal mode */
+#aswrapper div.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
@@ -107,94 +249,41 @@
 	padding: 0;
 	margin: 0;
 }
-.anythingBase .panel.vertical {
+/* vertical mode */
+#aswrapper div.anythingSlider .vertical .panel {
 	float: none;
 }
-
-/* Navigation Arrows */
-#aswrapper div.anythingSlider .arrow {
-	top: 50%;
+/* fade mode */
+#aswrapper div.anythingSlider .fade .panel {
+	float: none;
 	position: absolute;
-	display: block;
+	top: 0;
+	left: 0;
+	z-index: 0;
 }
-#aswrapper div.anythingSlider .arrow a {
-	display: block;
-	height: 140px;
-	margin: -70px 0 0 0; /* half height of image */
-	width: 45px;
-	text-align: center;
-	outline: 0;
-	background: url(../images/default.png) no-repeat;
+/* fade mode active page - visible & on top */
+#aswrapper div.anythingSlider .fade .activePage {
+	z-index: 1;
 }
-/* hide text, target the span so IE7 doesn't text-indent the link */
-#aswrapper div.anythingSlider .arrow a span { display: block; visibility: hidden; }
-/* back arrow */
-#aswrapper div.anythingSlider .back { left: 0; }
-#aswrapper div.anythingSlider .back a { background-position: left top; }
-#aswrapper div.anythingSlider .back a:hover, #aswrapper div.anythingSlider .back a.hover { background-position: left -140px; }
-#aswrapper div.anythingSlider .back.disabled { display: none; } /* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
-/* forward arrow */
-#aswrapper div.anythingSlider .forward { right: 0; }
-#aswrapper div.anythingSlider .forward a { background-position: right top; }
-#aswrapper div.anythingSlider .forward a:hover, #aswrapper div.anythingSlider .forward a.hover { background-position: right -140px; }
-#aswrapper div.anythingSlider .forward.disabled { display: none; } /* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
 
-/* Navigation Links */
-#aswrapper div.anythingSlider .anythingControls { outline: 0; display: none; }
-#aswrapper div.anythingSlider .anythingControls ul { margin: 0; padding: 0; float: left; }
-#aswrapper div.anythingSlider .anythingControls ul li { display: inline; }
-#aswrapper div.anythingSlider .anythingControls ul a {
-	font: 11px/18px Georgia, Serif;
-	display: inline-block;
-	text-decoration: none;
-	padding: 2px 8px;
-	height: 18px;
-	margin: 0 5px 0 0;
-	background-image: url(../images/default.png);
-	background-position: center -288px ;
-	background-repeat: repeat-x;
-	text-align: center;
-	outline: 0;
-	border-radius: 0 0 5px 5px;
-	-moz-border-radius: 0 0 5px 5px;
-	-webkit-border-radius: 0 0 5px 5px;
-}
-#aswrapper div.anythingSlider .anythingControls ul a:hover {
-	background-image: none;
-}
-/* Navigation size window */
-#aswrapper div.anythingSlider .anythingControls .anythingNavWindow { overflow: hidden; float: left; }
-
+/***********************
+  RTL STYLING
+ ***********************/
 /* slider autoplay right-to-left, reverse order of nav links to look better */
-#aswrapper div.anythingSlider.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
-#aswrapper div.anythingSlider.rtl .anythingControls ul { float: left; }    /* move nav link group to left */
 #aswrapper div.anythingSlider.rtl .anythingWindow {
 	direction: ltr;
 	unicode-bidi: bidi-override;
 }
-/* #aswrapper div.anythingSlider.rtl .start-stop { float: right; } */ /* move start/stop button - in case you want to switch sides */
-
-/* Autoplay Start/Stop button */
-#aswrapper div.anythingSlider .start-stop {
-	background-image: url(../images/default.png);
-	background-position: center -288px;
-	background-repeat: repeat-x;
-	padding: 2px 5px;
-	width: 40px;
-	text-align: center;
-	text-decoration: none;
-	float: right;
-	z-index: 100;
-	outline: 0;
-	border-radius: 0 0 5px 5px;
-	-moz-border-radius: 0 0 5px 5px;
-	-webkit-border-radius: 0 0 5px 5px;
-}
-/* hide cell shading on hover - makes the button appear to come forward */
-#aswrapper div.anythingSlider .start-stop:hover, #aswrapper div.anythingSlider .start-stop.hover { background-image: none; }
+#aswrapper div.anythingSlider.rtl .anythingControls ul { float: left; } /* move nav link group to left */
+#aswrapper div.anythingSlider.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
+#aswrapper div.anythingSlider.rtl .start-stop { /* float: right; */ } /* move start/stop button - in case you want to switch sides */
 
 /* probably not necessary, but added just in case */
-#aswrapper div.anythingSlider, #aswrapper div.anythingSlider .anythingWindow, #aswrapper div.anythingSlider .anythingControls ul a, #aswrapper div.anythingSlider .arrow a, #aswrapper div.anythingSlider .start-stop {
+#aswrapper div.anythingSlider,
+#aswrapper div.anythingSlider .anythingWindow,
+#aswrapper div.anythingSlider .anythingControls ul a,
+#aswrapper div.anythingSlider .arrow a,
+#aswrapper div.anythingSlider .start-stop {
 	transition-duration: 0;
 	-o-transition-duration: 0;
 	-moz-transition-duration: 0;

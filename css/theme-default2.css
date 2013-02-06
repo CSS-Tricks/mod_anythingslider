@@ -1,6 +1,7 @@
 /*
-	AnythingSlider v1.7+ themes
-	Default 2 theme - triangly
+	AnythingSlider v1.8+ themes
+	Default 2 theme - ugly triangly
+	by Rob Garrison (aka Mottie)
 */
 
 /****************************
@@ -16,9 +17,14 @@
 	overflow-x: hidden;
 }
 
-/* Opera width restriction */
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+
 .anythingBase {
-	max-width: 32766px;
 	background: transparent;
 	list-style: none;
 	position: absolute;
@@ -26,7 +32,7 @@
 	left: 0;
 	margin: 0;
 	padding: 0;
-	/* override the #slider overflow above, once the class is added */
+	/* override the #slider overflow above, once this class is added to #slider */
 	overflow: visible !important;
 }
 
@@ -57,18 +63,31 @@
 	padding: 0 19px; /* adjust left/right padding here to move arrows towards or away from the center */
 }
 
-/* Panels/Slides */
-.anythingBase .panel {
+/* all panels inside the slider; horizontal mode */
+#aswrapper div.anythingSlider .panel {
 	background: transparent;
 	display: block;
 	overflow: hidden;
 	float: left;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 }
-/* Vertical panels */
-.anythingBase .panel.vertical {
+/* vertical mode */
+#aswrapper div.anythingSlider .vertical .panel {
 	float: none;
+}
+
+/* fade mode */
+#aswrapper div.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+/* fade mode active page - visible & on top */
+#aswrapper div.anythingSlider .fade .activePage {
+	z-index: 1;
 }
 
 /* Slider window - top & bottom borders, default state */
@@ -95,7 +114,7 @@
 /* Arrow buttons images */
 #aswrapper div.anythingSlider-default2 .arrow a {
 	display: block;
-	background: transparent url(../images/default-2.png) no-repeat;
+	background: transparent url(../images/default2.png) no-repeat;
 	height: 56px;
 	width: 38px;
 	text-align: center;
@@ -160,7 +179,7 @@
 /* control links */
 #aswrapper div.anythingSlider-default2 .anythingControls ul a {
 	display: block;
-	background: transparent url(../images/default-2.png) no-repeat left -111px; /* default tab, active/inactive slider */
+	background: transparent url(../images/default2.png) no-repeat left -111px; /* default tab, active/inactive slider */
 	text-decoration: none;
 	width: 18px;
 	height: 18px;
@@ -186,7 +205,7 @@
 
 /* Start/stop button - stopped */
 #aswrapper div.anythingSlider-default2 .start-stop {
-	background: transparent url(../images/default-2.png) no-repeat -37px -111px;
+	background: transparent url(../images/default2.png) no-repeat -37px -111px;
 	color: #ddd;
 	width: 18px;
 	height: 18px;
@@ -211,18 +230,15 @@
 }
 
 /* Navigation size window arrows */
-#aswrapper div.anythingSlider-default2 .anythingControls li.next a span,
-#aswrapper div.anythingSlider-default2 .anythingControls li.prev a span {
+#aswrapper div.anythingSlider-default2 .anythingControls li.next a span, #aswrapper div.anythingSlider-default2 .anythingControls li.prev a span {
 	font-size: 9px;
 	text-indent: 1px;
 	padding: 6px 0 0 5px;
 }
-#aswrapper div.anythingSlider-default2 .anythingControls li.prev a,
-#aswrapper div.anythingSlider-default2 .anythingControls li.next a {
+#aswrapper div.anythingSlider-default2 .anythingControls li.prev a, #aswrapper div.anythingSlider-default2 .anythingControls li.next a {
 	color: #ddd;
 }
-#aswrapper div.anythingSlider-default2 .anythingControls li.next a:hover,
-#aswrapper div.anythingSlider-default2 .anythingControls li.prev a:hover {
+#aswrapper div.anythingSlider-default2 .anythingControls li.next a:hover, #aswrapper div.anythingSlider-default2 .anythingControls li.prev a:hover {
 	color: #000;
 }
 
@@ -230,11 +246,33 @@
   COMMON SLIDER STYLING
  ***********************/
 /* text indent moved to span inside "a", for IE7; apparently, a negative text-indent on an "a" link moves the link as well as the text */
-#aswrapper div.anythingSlider-default2 .arrow a span,
-#aswrapper div.anythingSlider-default2 .anythingControls ul a span,
-#aswrapper div.anythingSlider-default2 .start-stop span {
+#aswrapper div.anythingSlider-default2 .arrow a span, #aswrapper div.anythingSlider-default2 .anythingControls ul a span, #aswrapper div.anythingSlider-default2 .start-stop span {
 	display: block;
 	line-height: 1px; /* needed for IE7 */
 	width: 0;
 	visibility: hidden; /* needed for IE8, instead of text-indent: -9999px */
+}
+/* AnythingSlider IE7 and older styling */
+#aswrapper div.as-oldie div#aswrapper div.anythingSlider .arrow {
+	margin: 0;
+}
+/* When using the navigationSize option, the side margins need to be zero
+   None of the navigation panels look good in IE7 now =( */
+#aswrapper div.as-oldie div#aswrapper div.anythingSlider .anythingControls {
+	margin: 0 0 0 30px;
+}
+#aswrapper div.as-oldie div#aswrapper div.anythingSlider .anythingControls ul.thumbNav a {
+	margin: 0 0 0 2px;
+}
+#aswrapper div.as-oldie div#aswrapper div.anythingSlider .anythingControls .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+#aswrapper div.as-oldie div#aswrapper div.anythingSlider .anythingControls {
+	display: block;
+	width: 95%; /* arbitrary percentage, adjust to fit your slider in IE7 */
+	margin: 0;
+}
+#aswrapper div.as-oldie #aswrapper div.anythingSlider-default2 .anythingControls {
+	width: 90%;
+	margin-left: 0;
 }

@@ -1,10 +1,12 @@
-/*************
- Leather image
- *************/
+﻿/* wrapper backgrounds by Rob Garrison (aka Mottie) */
 #aswrapper {
 	padding: 40px;
 	margin: 0 auto;
 }
+
+/*************
+ Leather image
+ *************/
 #aswrapper.leather {
 	background-color: rgba(117, 117, 117, 0.5);
 	background-image: -moz-repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-leather.jpg);
@@ -12,3 +14,7 @@
 	background-image: repeating-radial-gradient(50% 50%, circle cover, rgba(117, 117, 117, 0.4), rgba(0, 0, 0, 0.4) 100%), url(../images/bkgd-leather.jpg);
 }
 
+.as-oldie #aswrapper.leather {
+	background-color: rgb(117, 117, 117);
+	background-image: url(../images/bkgd-leather.jpg);
+}

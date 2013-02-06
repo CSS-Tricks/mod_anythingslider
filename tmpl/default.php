@@ -40,15 +40,17 @@ $asj(function () {
 			}
 			echo "return titles[index];";
 		}
+		else echo "return \"\";";
 		?>
 	}
 	$asj('.anythingSlider').anythingSlider({
 		theme				: "<?php echo $slidertheme ?>",
+		mode				: "<?php echo $slidermode ?>",
 		expand              : <?php echo $sliderexpand ? "true" : "false" ?>,     
 		resizeContents      : <?php echo $resizecontents ? "true" : "false" ?>,      
 		vertical            : <?php echo $slidervertical ? "true" : "false" ?>,     
 		<?php if ($showmultiple != "") echo 'showMultiple : '.$showmultiple,','."\n"; ?>
-		easing              : "easeInOutExpo",   
+		easing              : <?php if ($easing != "") echo '"'.$easing.'"'; else echo '"swing"'; ?>,   
 		toggleArrows        : <?php echo $togglearrows ? "true" : "false" ?>,     
 		toggleControls      : <?php echo $togglecontrols ? "true" : "false" ?>,     
 		<?php
@@ -84,9 +86,10 @@ $asj(function () {
 </script>
 <?php
 	echo '<div id="aswrapper" class="'.$aswrapper.'">';
+    echo '<ul class="anythingSlider" id="slider'.$uniqueID.'">';
 ?>
-<ul class="anythingSlider" id="slider">
 	<?php
+	if ($number_items == 0) echo "<li id='slide0'>No data in category</li>";
 	for ($i=0, $n=$number_items; $i < $n; $i++) {
 		$item = &$slideShow[$i];
 		echo "<li id='slide$i'>";
@@ -97,7 +100,7 @@ $asj(function () {
 		$item->text = $item->introtext;
 		$results = $dispatcher->trigger('onPrepareContent', array (& $item, & $params, $limitstart));
 		if ($params->get('show_page_title'))
-		echo "<h2>$item->title</h2>";
+		  echo "<h2>$item->title</h2>";
 		echo $item->text;
 		echo "</li>";
 	}
