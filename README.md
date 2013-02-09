@@ -5,7 +5,7 @@
 * Updated by [Ken Adam](https://github.com/Akadamia) Feb 2013 to use AnythingSlider 1.8.16 
 * These files were sent me to post on github. I (Mottie) have very little knowledge of php and Joomla, but I will do my best to keep this repository updated.
 * This code package is also available for download from [joomlacode.org](http://joomlacode.org/gf/project/anythingslider/)
-* AnythingSlider documentation can be found [here](https://github.com/ProLoser/AnythingSlider/wiki).
+* AnythingSlider documentation can be found [here](https://github.com/CSS-Tricks/AnythingSlider/wiki).
 
 ## To do
 
@@ -15,7 +15,7 @@
 
 ### Version 1.4.1 (2/09/2013)
 
-* Corrected call for "content.prepare" to Joomla! 2.5 version so that the content of each slide gets the content prepare plugins install
+* Corrected call for "content.prepare" to Joomla! 2.5 version so that the content of each slide gets processed by the installed content prepare plugins
 
 ### Version 1.4.0 (2/06/2013)
 
