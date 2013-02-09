@@ -2,17 +2,25 @@
 
 * The original [Joomla 1.5 mod for AnythingSlider](http://extensions.joomla.org/extensions/news-display/articles-display/articles-showcase/11799) (version 1.2.1) was written by [Dnote software](http://www.dnote.nl/index.php?option=com_content&view=article&id=40&Itemid=33) with a GPLv2 license.
 * This repository was started by updates made by [Ken Adam](https://github.com/Akadamia) for Joomla 2.5 and AnythingSlider v1.7.26.
+* Updated by [Ken Adam](https://github.com/Akadamia) Feb 2013 to use AnythingSlider 1.8.16 
 * These files were sent me to post on github. I (Mottie) have very little knowledge of php and Joomla, but I will do my best to keep this repository updated.
 * This code package is also available for download from [joomlacode.org](http://joomlacode.org/gf/project/anythingslider/)
 * AnythingSlider documentation can be found [here](https://github.com/ProLoser/AnythingSlider/wiki).
 
 ## To do
 
-* Update AnythingSlider to the most recent version.
-* Code to link "anythingslider-ie.css" was not added Ken needed to find out how to get Joomla to add conditional comments in the header. Which will not be necessary once we update the AnythingSlider to the most recent version.
 * Add installation instructions.
 
 ## Change Log
+
+### Version 1.4.1 (2/09/2013)
+
+* Corrected call for "content.prepare" to Joomla! 2.5 version so that the content of each slide gets the content prepare plugins install
+
+### Version 1.4.0 (2/06/2013)
+
+* Updated to use version 1.8.16 of AnythingSlider
+* Corrected setting of #aswrapper id so that "expand" mode works
 
 ### Version 1.3.2 (3/18/2012)
 
