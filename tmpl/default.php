@@ -85,6 +85,7 @@ $asj(function () {
 });
 </script>
 <?php
+	JPluginHelper::importPlugin('content');
 	echo '<div id="aswrapper" class="'.$aswrapper.'">';
     echo '<ul class="anythingSlider" id="slider'.$uniqueID.'">';
 ?>
@@ -97,8 +98,7 @@ $asj(function () {
 		$params->merge($aparams);
 		$limitstart = JRequest::getVar('limitstart', 0, '', 'int');
 		$dispatcher =& JDispatcher::getInstance();
-		$item->text = $item->introtext;
-		$results = $dispatcher->trigger('onPrepareContent', array (& $item, & $params, $limitstart));
+		$item->text = JHtml::_('content.prepare', $item->introtext);
 		if ($params->get('show_page_title'))
 		  echo "<h2>$item->title</h2>";
 		echo $item->text;

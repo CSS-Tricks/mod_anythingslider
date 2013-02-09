@@ -2,12 +2,12 @@
 <extension type="module" version="2.5.8" client="site" method="upgrade">
 	<name>AnythingSlider</name>
 	<author>Ken Adam</author>
-	<creationDate>03-02-2013</creationDate>
+	<creationDate>09-02-2013</creationDate>
 	<copyright>(c)2012 All rights reserved by Akadamia.</copyright>
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>ken@akadamia.co.uk</authorEmail>
 	<authorUrl>www.akadamia.co.uk</authorUrl>
-	<version>1.4.0</version>
+	<version>1.4.1</version>
 	<description>MOD_ANYTHINGSLIDER_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_anythingslider">mod_anythingslider.php</filename>
