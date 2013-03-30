@@ -41,7 +41,7 @@ class ModSlideShow
 		$contentConfig  = &JComponentHelper::getParams( 'com_content' );
 		$groups		= implode(',', $user->getAuthorisedViewLevels());
 		$date =& JFactory::getDate();
-		$now = $date->toMySQL();
+		$now = $date->toSQL(); // was toMySQL, which was deprecated in Joomla! 2.5 and removed in 3.0
 
 		$nullDate = $db->getNullDate();
 
