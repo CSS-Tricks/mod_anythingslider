@@ -13,7 +13,13 @@
 
 ## Change Log
 
-### Version 1.4.1 (2/09/2013)
+### Version 1.4.2b (30/03/2013)
+
+* Updates for Joomla 3 compatibility
+* Replaced DS with '/'
+* Replaced toMySQL with toSQL
+
+### Version 1.4.1 (09/02/2013)
 
 * Corrected call for "content.prepare" to Joomla! 2.5 version so that the content of each slide gets processed by the installed content prepare plugins
 
