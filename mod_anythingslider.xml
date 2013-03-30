@@ -7,7 +7,7 @@
 	<license>GNU/GPL http://www.gnu.org/copyleft/gpl.html</license>
 	<authorEmail>ken@akadamia.co.uk</authorEmail>
 	<authorUrl>www.akadamia.co.uk</authorUrl>
-	<version>1.4.1</version>
+	<version>1.4.2</version>
 	<description>MOD_ANYTHINGSLIDER_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_anythingslider">mod_anythingslider.php</filename>
